@@ -27,7 +27,7 @@ $('.content').css
 Draw.winner = undefined
 Draw.winnerIndex = null
 
-data = demoData if !data
+
 
 # Google 小姐語音
 this.say = (Rlt, lng='zh-tw') ->
@@ -38,28 +38,32 @@ this.say = (Rlt, lng='zh-tw') ->
   $('#divSay').html embed
   return
 
+if typeof(data) == "undefined"
+  dData = demoData
+else
+  dData = data
 # 抓第一筆資料來解析
-if data[0]['fullname']
+if dData[0]['fullname']
   nameProperty = 'fullname'
-else if data[0]['name']
+else if dData[0]['name']
   nameProperty = 'name'
 else
   console.error "Error: Can't read name property form data"
 
 FB = false
 
-if data[0]['fbid']
+if dData[0]['fbid']
   idProperty = 'fbid'
   FB = true
-else if data[0]['id']
+else if dData[0]['id']
   idProperty = 'id'
 
 avator = false
 
-if data[0]['avator']
+if dData[0]['avator']
   avatorProperty = 'avator'
   avator = true
-else if data[0]['img']
+else if dData[0]['img']
   avatorProperty = 'img'
   avator = true
 
@@ -90,7 +94,7 @@ Draw.draw = ->
 
   total = data.length
   Draw.winnerIndex = Math.floor((Math.random() * total))
-  Draw.winner = data[Draw.winnerIndex]
+  Draw.winner = dData[Draw.winnerIndex]
 
   $('.winners').prepend generateHTML(Draw.winner, false)
   # $('.winner')[0].innerHTML = generateHTML(Draw.winner)
@@ -119,9 +123,9 @@ afterDraw = ->
 
 drawWheelUpdate = (isew=false) ->
   if Draw.i < 64
-    total = data.length
+    total = dData.length
     uIndex = Math.floor((Math.random() * total))
-    $('.wheel .item')[31-(16+Draw.i)%32].innerHTML = generateHTML(data[uIndex])
+    $('.wheel .item')[31-(16+Draw.i)%32].innerHTML = generateHTML(dData[uIndex])
     Draw.i++
     if isew
       if Draw.i < 32
