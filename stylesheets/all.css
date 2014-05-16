@@ -1,0 +1,1044 @@
+@font-face {
+  font-family: "Anonymous Pro";
+  src: url(fonts/Anonymous Pro); }
+
+/* line 41, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body {
+  background: #333333 url("../images/background.png");
+  text-align: center;
+  font-family: sans-serif;
+  margin: 0; }
+
+/* line 49, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+.container {
+  position: absolute;
+  display: flex;
+  display: -webkit-flex;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  pointer-events: none; }
+
+/* line 59, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+.content {
+  margin: auto;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -ms-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 800px; }
+
+/* line 69, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+.ticket {
+  background-color: #fff;
+  display: inline-block;
+  padding: 12px;
+  width: 220px;
+  position: relative;
+  margin: 12px;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(128, 128, 128, 0.1) inset;
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(128, 128, 128, 0.1) inset;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(128, 128, 128, 0.1) inset;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  height: 50px;
+  opacity: 1;
+  margin-top: 12px;
+  pointer-events: fill; }
+  /* line 84, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .ticket::before {
+    content: " ";
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    border-left: 1px solid rgba(255, 41, 50, 0.18);
+    border-right: 1px solid rgba(255, 41, 50, 0.18);
+    top: 0;
+    left: 4px; }
+  /* line 95, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .ticket .avator {
+    width: 50px;
+    height: 50px;
+    -webkit-background-size: cover;
+    background-size: cover;
+    float: left;
+    margin-left: 4px; }
+  /* line 104, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .ticket .id {
+    position: absolute;
+    font-family: "Anonymous Pro";
+    font-size: 12px;
+    color: #aaa;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    padding: 6px;
+    bottom: 0;
+    right: 0; }
+  /* line 116, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .ticket .name {
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    text-align: left;
+    padding-left: 12.5px;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis; }
+
+/* line 128, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+.wheel {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: -25px;
+  left: -25px;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 10s;
+  -moz-transition-duration: 10s;
+  -o-transition-duration: 10s;
+  transition-duration: 10s; }
+  /* line 139, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel * {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d; }
+  /* line 141, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel .wheel-inner {
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+    position: relative; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-0 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(0deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(0deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(0deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(0deg) translateZ(400px) scale(0.5);
+    transform: rotateX(0deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-1 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(11.25deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(11.25deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(11.25deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(11.25deg) translateZ(400px) scale(0.5);
+    transform: rotateX(11.25deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-2 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(22.5deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(22.5deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(22.5deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(22.5deg) translateZ(400px) scale(0.5);
+    transform: rotateX(22.5deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-3 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(33.75deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(33.75deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(33.75deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(33.75deg) translateZ(400px) scale(0.5);
+    transform: rotateX(33.75deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-4 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(45deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(45deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(45deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(45deg) translateZ(400px) scale(0.5);
+    transform: rotateX(45deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-5 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(56.25deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(56.25deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(56.25deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(56.25deg) translateZ(400px) scale(0.5);
+    transform: rotateX(56.25deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-6 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(67.5deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(67.5deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(67.5deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(67.5deg) translateZ(400px) scale(0.5);
+    transform: rotateX(67.5deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-7 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(78.75deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(78.75deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(78.75deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(78.75deg) translateZ(400px) scale(0.5);
+    transform: rotateX(78.75deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-8 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(90deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(90deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(90deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(90deg) translateZ(400px) scale(0.5);
+    transform: rotateX(90deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-9 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(101.25deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(101.25deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(101.25deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(101.25deg) translateZ(400px) scale(0.5);
+    transform: rotateX(101.25deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-10 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(112.5deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(112.5deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(112.5deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(112.5deg) translateZ(400px) scale(0.5);
+    transform: rotateX(112.5deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-11 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(123.75deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(123.75deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(123.75deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(123.75deg) translateZ(400px) scale(0.5);
+    transform: rotateX(123.75deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-12 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(135deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(135deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(135deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(135deg) translateZ(400px) scale(0.5);
+    transform: rotateX(135deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-13 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(146.25deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(146.25deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(146.25deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(146.25deg) translateZ(400px) scale(0.5);
+    transform: rotateX(146.25deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-14 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(157.5deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(157.5deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(157.5deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(157.5deg) translateZ(400px) scale(0.5);
+    transform: rotateX(157.5deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-15 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(168.75deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(168.75deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(168.75deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(168.75deg) translateZ(400px) scale(0.5);
+    transform: rotateX(168.75deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-16 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(180deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(180deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(180deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(180deg) translateZ(400px) scale(0.5);
+    transform: rotateX(180deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-17 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(191.25deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(191.25deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(191.25deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(191.25deg) translateZ(400px) scale(0.5);
+    transform: rotateX(191.25deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-18 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(202.5deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(202.5deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(202.5deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(202.5deg) translateZ(400px) scale(0.5);
+    transform: rotateX(202.5deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-19 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(213.75deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(213.75deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(213.75deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(213.75deg) translateZ(400px) scale(0.5);
+    transform: rotateX(213.75deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-20 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(225deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(225deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(225deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(225deg) translateZ(400px) scale(0.5);
+    transform: rotateX(225deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-21 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(236.25deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(236.25deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(236.25deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(236.25deg) translateZ(400px) scale(0.5);
+    transform: rotateX(236.25deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-22 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(247.5deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(247.5deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(247.5deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(247.5deg) translateZ(400px) scale(0.5);
+    transform: rotateX(247.5deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-23 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(258.75deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(258.75deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(258.75deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(258.75deg) translateZ(400px) scale(0.5);
+    transform: rotateX(258.75deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-24 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(270deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(270deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(270deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(270deg) translateZ(400px) scale(0.5);
+    transform: rotateX(270deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-25 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(281.25deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(281.25deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(281.25deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(281.25deg) translateZ(400px) scale(0.5);
+    transform: rotateX(281.25deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-26 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(292.5deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(292.5deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(292.5deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(292.5deg) translateZ(400px) scale(0.5);
+    transform: rotateX(292.5deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-27 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(303.75deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(303.75deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(303.75deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(303.75deg) translateZ(400px) scale(0.5);
+    transform: rotateX(303.75deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-28 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(315deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(315deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(315deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(315deg) translateZ(400px) scale(0.5);
+    transform: rotateX(315deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-29 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(326.25deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(326.25deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(326.25deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(326.25deg) translateZ(400px) scale(0.5);
+    transform: rotateX(326.25deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-30 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(337.5deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(337.5deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(337.5deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(337.5deg) translateZ(400px) scale(0.5);
+    transform: rotateX(337.5deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 149, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel #item-31 {
+    position: absolute;
+    top: -74px;
+    left: -244px;
+    -webkit-transform: rotateX(348.75deg) translateZ(400px) scale(0.5);
+    -moz-transform: rotateX(348.75deg) translateZ(400px) scale(0.5);
+    -ms-transform: rotateX(348.75deg) translateZ(400px) scale(0.5);
+    -o-transform: rotateX(348.75deg) translateZ(400px) scale(0.5);
+    transform: rotateX(348.75deg) translateZ(400px) scale(0.5);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all; }
+  /* line 164, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .wheel .ticket {
+    margin: 0;
+    -webkit-transition-duration: 0.6s;
+    -moz-transition-duration: 0.6s;
+    -o-transition-duration: 0.6s;
+    transition-duration: 0.6s;
+    padding: 24px;
+    width: 440px;
+    margin: 24px;
+    -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 0 80px rgba(128, 128, 128, 0.1) inset;
+    -moz-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 0 80px rgba(128, 128, 128, 0.1) inset;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 0 80px rgba(128, 128, 128, 0.1) inset;
+    height: 100px;
+    margin-top: 24px; }
+    /* line 174, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+    .wheel .ticket::before {
+      height: 100%;
+      width: 2px;
+      border-left: 2px solid rgba(255, 41, 50, 0.18);
+      border-right: 2px solid rgba(255, 41, 50, 0.18);
+      left: 8px; }
+    /* line 182, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+    .wheel .ticket .avator {
+      width: 100px;
+      height: 100px;
+      margin-left: 8px; }
+    /* line 188, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+    .wheel .ticket .id {
+      font-size: 24px;
+      padding: 12px; }
+    /* line 193, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+    .wheel .ticket .name {
+      height: 100px;
+      line-height: 100px;
+      font-size: 48px;
+      padding-left: 25px; }
+
+/* line 202, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+.pointer {
+  position: absolute;
+  height: 80px;
+  width: 240px;
+  top: -46px;
+  left: -126px;
+  border: 4px solid #ff2e37;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  border-radius: 7px;
+  -webkit-transform: translateZ(430px);
+  -moz-transform: translateZ(430px);
+  -ms-transform: translateZ(430px);
+  -o-transform: translateZ(430px);
+  transform: translateZ(430px);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  transition-property: transform;
+  -webkit-box-shadow: 0 0 8px #ff2932, 0 0 8px #ff2932 inset;
+  -moz-box-shadow: 0 0 8px #ff2932, 0 0 8px #ff2932 inset;
+  box-shadow: 0 0 8px #ff2932, 0 0 8px #ff2932 inset; }
+
+/* line 216, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+.pointer.show {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1; }
+
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-0 {
+  -webkit-transform: rotateX(0deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(0deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(0deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(0deg) translateZ(600px) scale(0.5);
+  transform: rotateX(0deg) translateZ(600px) scale(0.5); }
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-1 {
+  -webkit-transform: rotateX(11.25deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(11.25deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(11.25deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(11.25deg) translateZ(600px) scale(0.5);
+  transform: rotateX(11.25deg) translateZ(600px) scale(0.5); }
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-2 {
+  -webkit-transform: rotateX(22.5deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(22.5deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(22.5deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(22.5deg) translateZ(600px) scale(0.5);
+  transform: rotateX(22.5deg) translateZ(600px) scale(0.5); }
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-3 {
+  -webkit-transform: rotateX(33.75deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(33.75deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(33.75deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(33.75deg) translateZ(600px) scale(0.5);
+  transform: rotateX(33.75deg) translateZ(600px) scale(0.5); }
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-4 {
+  -webkit-transform: rotateX(45deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(45deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(45deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(45deg) translateZ(600px) scale(0.5);
+  transform: rotateX(45deg) translateZ(600px) scale(0.5); }
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-5 {
+  -webkit-transform: rotateX(56.25deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(56.25deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(56.25deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(56.25deg) translateZ(600px) scale(0.5);
+  transform: rotateX(56.25deg) translateZ(600px) scale(0.5); }
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-6 {
+  -webkit-transform: rotateX(67.5deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(67.5deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(67.5deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(67.5deg) translateZ(600px) scale(0.5);
+  transform: rotateX(67.5deg) translateZ(600px) scale(0.5); }
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-7 {
+  -webkit-transform: rotateX(78.75deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(78.75deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(78.75deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(78.75deg) translateZ(600px) scale(0.5);
+  transform: rotateX(78.75deg) translateZ(600px) scale(0.5); }
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-8 {
+  -webkit-transform: rotateX(90deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(90deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(90deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(90deg) translateZ(600px) scale(0.5);
+  transform: rotateX(90deg) translateZ(600px) scale(0.5); }
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-9 {
+  -webkit-transform: rotateX(101.25deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(101.25deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(101.25deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(101.25deg) translateZ(600px) scale(0.5);
+  transform: rotateX(101.25deg) translateZ(600px) scale(0.5); }
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-10 {
+  -webkit-transform: rotateX(112.5deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(112.5deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(112.5deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(112.5deg) translateZ(600px) scale(0.5);
+  transform: rotateX(112.5deg) translateZ(600px) scale(0.5); }
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-11 {
+  -webkit-transform: rotateX(123.75deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(123.75deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(123.75deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(123.75deg) translateZ(600px) scale(0.5);
+  transform: rotateX(123.75deg) translateZ(600px) scale(0.5); }
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-12 {
+  -webkit-transform: rotateX(135deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(135deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(135deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(135deg) translateZ(600px) scale(0.5);
+  transform: rotateX(135deg) translateZ(600px) scale(0.5); }
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-13 {
+  -webkit-transform: rotateX(146.25deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(146.25deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(146.25deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(146.25deg) translateZ(600px) scale(0.5);
+  transform: rotateX(146.25deg) translateZ(600px) scale(0.5); }
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-14 {
+  -webkit-transform: rotateX(157.5deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(157.5deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(157.5deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(157.5deg) translateZ(600px) scale(0.5);
+  transform: rotateX(157.5deg) translateZ(600px) scale(0.5); }
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-15 {
+  -webkit-transform: rotateX(168.75deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(168.75deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(168.75deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(168.75deg) translateZ(600px) scale(0.5);
+  transform: rotateX(168.75deg) translateZ(600px) scale(0.5); }
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-16 {
+  -webkit-transform: rotateX(180deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(180deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(180deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(180deg) translateZ(600px) scale(0.5);
+  transform: rotateX(180deg) translateZ(600px) scale(0.5); }
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-17 {
+  -webkit-transform: rotateX(191.25deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(191.25deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(191.25deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(191.25deg) translateZ(600px) scale(0.5);
+  transform: rotateX(191.25deg) translateZ(600px) scale(0.5); }
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-18 {
+  -webkit-transform: rotateX(202.5deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(202.5deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(202.5deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(202.5deg) translateZ(600px) scale(0.5);
+  transform: rotateX(202.5deg) translateZ(600px) scale(0.5); }
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-19 {
+  -webkit-transform: rotateX(213.75deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(213.75deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(213.75deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(213.75deg) translateZ(600px) scale(0.5);
+  transform: rotateX(213.75deg) translateZ(600px) scale(0.5); }
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-20 {
+  -webkit-transform: rotateX(225deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(225deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(225deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(225deg) translateZ(600px) scale(0.5);
+  transform: rotateX(225deg) translateZ(600px) scale(0.5); }
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-21 {
+  -webkit-transform: rotateX(236.25deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(236.25deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(236.25deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(236.25deg) translateZ(600px) scale(0.5);
+  transform: rotateX(236.25deg) translateZ(600px) scale(0.5); }
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-22 {
+  -webkit-transform: rotateX(247.5deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(247.5deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(247.5deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(247.5deg) translateZ(600px) scale(0.5);
+  transform: rotateX(247.5deg) translateZ(600px) scale(0.5); }
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-23 {
+  -webkit-transform: rotateX(258.75deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(258.75deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(258.75deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(258.75deg) translateZ(600px) scale(0.5);
+  transform: rotateX(258.75deg) translateZ(600px) scale(0.5); }
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-24 {
+  -webkit-transform: rotateX(270deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(270deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(270deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(270deg) translateZ(600px) scale(0.5);
+  transform: rotateX(270deg) translateZ(600px) scale(0.5); }
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-25 {
+  -webkit-transform: rotateX(281.25deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(281.25deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(281.25deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(281.25deg) translateZ(600px) scale(0.5);
+  transform: rotateX(281.25deg) translateZ(600px) scale(0.5); }
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-26 {
+  -webkit-transform: rotateX(292.5deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(292.5deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(292.5deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(292.5deg) translateZ(600px) scale(0.5);
+  transform: rotateX(292.5deg) translateZ(600px) scale(0.5); }
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-27 {
+  -webkit-transform: rotateX(303.75deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(303.75deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(303.75deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(303.75deg) translateZ(600px) scale(0.5);
+  transform: rotateX(303.75deg) translateZ(600px) scale(0.5); }
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-28 {
+  -webkit-transform: rotateX(315deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(315deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(315deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(315deg) translateZ(600px) scale(0.5);
+  transform: rotateX(315deg) translateZ(600px) scale(0.5); }
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-29 {
+  -webkit-transform: rotateX(326.25deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(326.25deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(326.25deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(326.25deg) translateZ(600px) scale(0.5);
+  transform: rotateX(326.25deg) translateZ(600px) scale(0.5); }
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-30 {
+  -webkit-transform: rotateX(337.5deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(337.5deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(337.5deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(337.5deg) translateZ(600px) scale(0.5);
+  transform: rotateX(337.5deg) translateZ(600px) scale(0.5); }
+/* line 245, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .wheel #item-31 {
+  -webkit-transform: rotateX(348.75deg) translateZ(600px) scale(0.5);
+  -moz-transform: rotateX(348.75deg) translateZ(600px) scale(0.5);
+  -ms-transform: rotateX(348.75deg) translateZ(600px) scale(0.5);
+  -o-transform: rotateX(348.75deg) translateZ(600px) scale(0.5);
+  transform: rotateX(348.75deg) translateZ(600px) scale(0.5); }
+/* line 251, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .content {
+  -webkit-perspective: 1800px;
+  -moz-perspective: 1800px;
+  -ms-perspective: 1800px;
+  -o-perspective: 1800px;
+  perspective: 1800px;
+  -webkit-transform: rotateY(-10deg) rotateZ(-20deg);
+  -moz-transform: rotateY(-10deg) rotateZ(-20deg);
+  -ms-transform: rotateY(-10deg) rotateZ(-20deg);
+  -o-transform: rotateY(-10deg) rotateZ(-20deg);
+  transform: rotateY(-10deg) rotateZ(-20deg); }
+/* line 265, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow .pointer {
+  -webkit-transform: translateZ(1801px);
+  -moz-transform: translateZ(1801px);
+  -ms-transform: translateZ(1801px);
+  -o-transform: translateZ(1801px);
+  transform: translateZ(1801px); }
+
+/* line 272, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow.b .content {
+  -webkit-transform: rotateY(10deg) rotateZ(20deg);
+  -moz-transform: rotateY(10deg) rotateZ(20deg);
+  -ms-transform: rotateY(10deg) rotateZ(20deg);
+  -o-transform: rotateY(10deg) rotateZ(20deg);
+  transform: rotateY(10deg) rotateZ(20deg); }
+
+/* line 287, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow.c .content {
+  -webkit-transform: rotateY(-10deg) rotateZ(20deg);
+  -moz-transform: rotateY(-10deg) rotateZ(20deg);
+  -ms-transform: rotateY(-10deg) rotateZ(20deg);
+  -o-transform: rotateY(-10deg) rotateZ(20deg);
+  transform: rotateY(-10deg) rotateZ(20deg); }
+
+/* line 302, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+body.animateShow.d .content {
+  -webkit-transform: rotateY(10deg) rotateZ(-20deg);
+  -moz-transform: rotateY(10deg) rotateZ(-20deg);
+  -ms-transform: rotateY(10deg) rotateZ(-20deg);
+  -o-transform: rotateY(10deg) rotateZ(-20deg);
+  transform: rotateY(10deg) rotateZ(-20deg); }
+
+/* line 315, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+.winners {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 308px;
+  overflow: auto;
+  overflow-x: hidden;
+  text-align: right;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s; }
+  /* line 328, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .winners:hover {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1; }
+  /* line 332, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .winners .ticket {
+    -webkit-transition-property: all, margin-left;
+    -moz-transition-property: all, margin-left;
+    -o-transition-property: all, margin-left;
+    transition-property: all, margin-left;
+    -webkit-transition-delay: 0, 0.7s;
+    -moz-transition-delay: 0, 0.7s;
+    -o-transition-delay: 0, 0.7s;
+    transition-delay: 0, 0.7s;
+    -webkit-transition-duration: 0.6s, 0.6s;
+    -moz-transition-duration: 0.6s, 0.6s;
+    -o-transition-duration: 0.6s, 0.6s;
+    transition-duration: 0.6s, 0.6s; }
+
+/* line 339, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+.controls {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 4px;
+  background-color: #fff;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s; }
+  /* line 349, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .controls a {
+    margin: 20px; }
+  /* line 353, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+  .controls a.draw {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    top: 0;
+    padding: 10px 12px;
+    border: 1px solid #d3321a;
+    text-shadow: none;
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e85842), color-stop(100%, #e5442b));
+    background: -webkit-linear-gradient(top, #e85842, #e5442b);
+    background: -moz-linear-gradient(top, #e85842, #e5442b);
+    background: -o-linear-gradient(top, #e85842, #e5442b);
+    background: linear-gradient(top, #e85842, #e5442b);
+    -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #d3321a, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #d3321a, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #d3321a, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    color: #fff; }
+    /* line 28, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+    .controls a.draw:hover {
+      -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #d3321a, 0px 8px 3px rgba(0, 0, 0, 0.3), inset 0 0 1000px rgba(255, 255, 255, 0.1);
+      -moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #d3321a, 0px 8px 3px rgba(0, 0, 0, 0.3), inset 0 0 1000px rgba(255, 255, 255, 0.1);
+      box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #d3321a, 0px 8px 3px rgba(0, 0, 0, 0.3), inset 0 0 1000px rgba(255, 255, 255, 0.1); }
+    /* line 32, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+    .controls a.draw:active {
+      top: 5px;
+      color: #d3321a;
+      text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+      -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 2px 0px #dc341b, 0px 3px 3px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 2px 0px #dc341b, 0px 3px 3px rgba(0, 0, 0, 0.3);
+      box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 2px 0px #dc341b, 0px 3px 3px rgba(0, 0, 0, 0.3);
+      background: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #e85842), color-stop(100%, #e5442b));
+      background: -webkit-linear-gradient(bottom, #e85842, #e5442b);
+      background: -moz-linear-gradient(bottom, #e85842, #e5442b);
+      background: -o-linear-gradient(bottom, #e85842, #e5442b);
+      background: linear-gradient(bottom, #e85842, #e5442b); }
+
+/* line 362, /Users/Neson/Projects/RaffleDraw/source/stylesheets/all.css.scss */
+.vimiumHUD {
+  display: none !important;
+  opacity: 0 !important; }
