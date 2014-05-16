@@ -1,0 +1,317 @@
+@charset "utf-8";
+
+@import "compass";
+
+@font-face {
+	font-family: "Anonymous Pro";
+	src: url(fonts/Anonymous Pro);
+}
+
+@mixin button($color) {
+	position: relative;
+	display: inline-block;
+	text-decoration: none;
+	top: 0;
+	padding: 10px 12px;
+	border: 1px solid darken($color, 12%);
+	@include text-shadow(none);
+	@include background(linear-gradient(top, $color, darken($color, 5%)));
+	@include box-shadow(inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px darken($color, 12%), 0px 8px 3px rgba(0, 0, 0, 0.3));
+	@include transition-property(all);
+	@include transition-duration(.3s);
+	@if lightness($color) < lightness(#999) {
+		color: #fff;
+	} @else {
+		color: #000;
+	}
+
+	&:hover {
+		@include box-shadow(inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px darken($color, 12%), 0px 8px 3px rgba(0, 0, 0, 0.3), inset 0 0 1000px rgba(255,255,255, .1));
+	}
+
+	&:active {
+		top: 5px;
+		color: darken($color, 12%);
+		@include text-shadow(0 1px 1px rgba(255,255,255, .8));
+		@include box-shadow(inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 2px 0px darken($color, 10%), 0px 3px 3px rgba(0, 0, 0, 0.3));
+		@include background(linear-gradient(bottom, $color, darken($color, 5%)));
+	}
+}
+
+body {
+	// background: #333;
+	background: #333 url("../images/background.png");
+	text-align: center;
+	font-family: sans-serif;
+	margin: 0;
+}
+
+.container {
+	position: absolute;
+	display: flex;
+	display: -webkit-flex;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	pointer-events: none;
+}
+
+.content {
+	margin: auto;
+	@include transform-style(preserve-3d);
+	@include transition-property(all);
+	@include perspective(800px);
+}
+
+$ticket-content-height: 50px;
+$ticket-content-width: 220px;
+
+.ticket {
+	background-color: #fff;
+	display: inline-block;
+	padding: 12px;
+	width: $ticket-content-width;
+	position: relative;
+	margin: 12px;
+	@include box-shadow(0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(128, 128, 128, 0.1) inset);
+	@include transition-property(all);
+	@include transition-duration(.4s);
+	height: $ticket-content-height;
+	opacity: 1;
+	margin-top: 12px;
+	pointer-events: fill;
+
+	&::before {
+		content: " ";
+		position: absolute;
+		height: 100%;
+		width: 1px;
+		border-left: 1px solid rgba(#ff2932, .18);
+		border-right: 1px solid rgba(#ff2932, .18);
+		top: 0;
+		left: 4px;
+	}
+
+	.avator {
+		width: $ticket-content-height;
+		height: $ticket-content-height;
+		-webkit-background-size: cover;
+		background-size: cover;
+		float: left;
+		margin-left: 4px;
+	}
+
+	.id {
+		position: absolute;
+		font-family: "Anonymous Pro";
+		font-size: 12px;
+		color: #aaa;
+		text-align: right;
+		@include ellipsis;
+		padding: 6px;
+		bottom: 0;
+		right: 0;
+	}
+
+	.name {
+		position: relative;
+		height: $ticket-content-height;
+		line-height: $ticket-content-height;
+		font-size: 24px;
+		text-align: left;
+		padding-left: $ticket-content-height/4;
+		cursor: pointer;
+		@include ellipsis;
+	}
+}
+
+.wheel {
+	position: absolute;
+	// margin: auto;
+	width: $ticket-content-height;
+	height: $ticket-content-height;
+	top: - $ticket-content-height/2;
+	left: - $ticket-content-height/2;
+	@include transform-style(preserve-3d);
+	@include transition-property(all);
+	@include transition-duration(10s);
+
+	* { @include transform-style(preserve-3d); }
+
+	@for $i from 0 through 31 {
+		#item-#{$i} {
+			position: absolute;
+			top: - ($ticket-content-height + 12*2);
+			left: - ($ticket-content-width + 12*2);
+			@include transform(rotateX(360/32*$i + deg) translateZ(400px) scale(0.5));
+			@include transition-property(all);
+
+			// &::before {
+			// 	content: "#{$i}";
+			// 	position: absolute;
+			// 	z-index: 1000;
+			// }
+		}
+	}
+
+	.ticket {
+		margin: 0;
+		@include transition-duration(.6s);
+		padding: 12px*2;
+		width: $ticket-content-width*2;
+		margin: 12px*2;
+		@include box-shadow(0 1px*2 4px*2 rgba(0, 0, 0, 0.3), 0 0 40px*2 rgba(128, 128, 128, 0.1) inset);
+		height: $ticket-content-height*2;
+		margin-top: 12px*2;
+
+		&::before {
+			height: 100%;
+			width: 1px*2;
+			border-left: 1px*2 solid rgba(#ff2932, .18);
+			border-right: 1px*2 solid rgba(#ff2932, .18);
+			left: 4px*2;
+		}
+
+		.avator {
+			width: $ticket-content-height*2;
+			height: $ticket-content-height*2;
+			margin-left: 4px*2;
+		}
+
+		.id {
+			font-size: 12px*2;
+			padding: 6px*2;
+		}
+
+		.name {
+			height: $ticket-content-height*2;
+			line-height: $ticket-content-height*2;
+			font-size: 24px*2;
+			padding-left: $ticket-content-height*2/4;
+		}
+	}
+}
+
+.pointer {
+	position: absolute;
+	height: $ticket-content-height + 30;
+	width: $ticket-content-width + 20;
+	top: - $ticket-content-height/2 - 21;
+	left: - $ticket-content-width/2 - 16;
+	border: 4px solid lighten(#ff2932, 1%);
+	@include border-radius(7px);
+	@include transform(translateZ(430px));
+	@include opacity(0);
+	@include transition-property(transform);
+	@include box-shadow(0 0 8px #ff2932, 0 0 8px #ff2932 inset);
+}
+
+.pointer.show {
+	@include opacity(1);
+}
+
+// .winner {
+// 	position: absolute;
+// 	height: $ticket-content-height;
+// 	width: $ticket-content-width;
+// 	top: - $ticket-content-height/2 - 12;
+// 	left: - $ticket-content-width/2 - 12;
+// 	@include transform(translateZ(401px));
+// 	@include transition-property(all);
+// 	@include transition-duration(.6s);
+// 	@include opacity(0);
+// }
+
+// .winner.show {
+// 	@include opacity(1);
+// }
+
+// .winner.out {
+// 	@include opacity(0);
+// 	margin-left: 500px;
+// }
+
+body.animateShow {
+
+	.wheel {
+		@for $i from 0 through 31 {
+			#item-#{$i} {
+				@include transform(rotateX(360/32*$i + deg) translateZ(600px) scale(0.5));
+			}
+		}
+	}
+
+	.content {
+		@include perspective(1800px);
+		@include transform(rotateY(-10deg) rotateZ(-20deg));
+	}
+
+	.pointer {
+		@include transform(translateZ(1801px));
+	}
+}
+
+body.animateShow.b {
+	.content {
+		@include transform(rotateY(10deg) rotateZ(20deg));
+	}
+}
+
+body.animateShow.c {
+	.content {
+		@include transform(rotateY(-10deg) rotateZ(20deg));
+	}
+}
+
+body.animateShow.d {
+	.content {
+		@include transform(rotateY(10deg) rotateZ(-20deg));
+	}
+}
+
+.winners {
+	position: fixed;
+	right: 0;
+	top: 0;
+	height: 100%;
+	width: $ticket-content-width*1.4;
+	overflow: auto;
+	overflow-x: hidden;
+	text-align: right;
+	@include opacity(.5);
+	@include transition-property(all);
+	@include transition-duration(.3s);
+
+	&:hover {
+		@include opacity(1);
+	}
+
+	.ticket {
+		@include transition-property(all, margin-left);
+		@include transition-delay(0, .7s);
+		@include transition-duration(.6s, .6s);
+	}
+}
+
+.controls {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 4px;
+	background-color: #fff;
+	@include opacity(0);
+	@include transition-duration(.2s);
+
+	a {
+		margin: 20px;
+	}
+
+	a.draw {
+		@include button(#e85842);
+	}
+
+	// &:hover {
+	// 	@include opacity(1);
+	// }
+}
