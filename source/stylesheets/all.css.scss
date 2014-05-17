@@ -138,6 +138,13 @@ $ticket-content-width: 220px;
 
 	* { @include transform-style(preserve-3d); }
 
+	.wheel-inner {
+		@include transition-property(all);
+		@include transition-duration(.5s);
+		@include transition-timing-function(linear);
+		position: relative;
+	}
+
 	@for $i from 0 through 31 {
 		#item-#{$i} {
 			position: absolute;
@@ -244,6 +251,15 @@ body.animateShow {
 	.content {
 		@include perspective(1800px);
 		@include transform(rotateY(-10deg) rotateZ(-20deg));
+
+		// .item:nth-child(n) {
+		// 	margin-left: 10px;
+		// }
+
+		// .item:nth-child(2n) {
+		// 	margin-left: -10px;
+		// }
+
 	}
 
 	.pointer {
@@ -252,20 +268,47 @@ body.animateShow {
 }
 
 body.animateShow.b {
+
 	.content {
 		@include transform(rotateY(10deg) rotateZ(20deg));
+
+		// .item:nth-child(n) {
+		// 	margin-left: -40px;
+		// }
+
+		// .item:nth-child(2n) {
+		// 	margin-left: 40px;
+		// }
 	}
 }
 
 body.animateShow.c {
+
 	.content {
 		@include transform(rotateY(-10deg) rotateZ(20deg));
+
+		// .item:nth-child(n) {
+		// 	margin-left: -30px;
+		// }
+
+		// .item:nth-child(2n) {
+		// 	margin-left: 30px;
+		// }
 	}
 }
 
 body.animateShow.d {
+
 	.content {
 		@include transform(rotateY(10deg) rotateZ(-20deg));
+
+		// .item:nth-child(n) {
+		// 	margin-left: 50px;
+		// }
+
+		// .item:nth-child(2n) {
+		// 	margin-left: -50px;
+		// }
 	}
 }
 
@@ -314,4 +357,9 @@ body.animateShow.d {
 	// &:hover {
 	// 	@include opacity(1);
 	// }
+}
+
+.vimiumHUD {
+	display: none !important;
+	opacity: 0 !important;
 }

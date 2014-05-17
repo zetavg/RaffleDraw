@@ -8,7 +8,7 @@
 /.bundle
 
 # Ignore the data
-/build/data.js
+/build/
 /source/data.js
 
 # Ignore cache
