@@ -25,7 +25,7 @@ Demo: [https://neson.github.com/RaffleDraw/](https://neson.github.com/RaffleDraw
 需要放在與 `index.html` 同目錄下的 `data.js`。若 `data.js` 中沒資料會轉用 `data.demo.js`。  
 格式如：
 
-```
+```js
 var data = [
     {
         "name": "陳俞安",
