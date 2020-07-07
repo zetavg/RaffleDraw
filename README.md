@@ -3,7 +3,7 @@ RaffleDraw
 
 HAML + SCSS + CoffeeScript 寫的 3D 抽獎程式
 
-Demo: [https://neson.github.com/RaffleDraw/](https://neson.github.com/RaffleDraw/)
+Demo: [http://zetavg.github.io/RaffleDraw/](http://zetavg.github.io/RaffleDraw/)
 
 - - -
 
